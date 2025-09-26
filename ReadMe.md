@@ -37,6 +37,14 @@
    - 使用ndk-build构建系统
 
 
+
+##  编译源码步骤
+```bash
+
+浏览器打开  https://github.com/tearhacker/imgui145vlkuanAndroidTear/releases/tag/ndk17ollvmTear
+浏览器打开 去搜索zerotermux并下载软件 然后更新国内源 一直Y确定就好 不懂就百度问度娘
+MT管理器 直接解压ndk后用ndk路径下的ndk-build编译源码就行 一般都写有编译脚本
+
 ## 潜在风险
 
 1. **法律风险**：
@@ -59,12 +67,3 @@
 - **研究者**：可作为Android游戏逆向工程的研究案例
 
 这个项目更多是一个技术实验而非成熟产品，使用时需谨慎评估风险。
-
-```bash
-echo "# AllTearGameCheatKernel" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/tearhacker/AllTearGameCheatKernel.git
-git push -u origin main
