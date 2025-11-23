@@ -1,0 +1,41 @@
+泪心开源一定会写Readme.md 推荐先看GitHub在介绍文件Readme.md哦
+@TearGame
+
+数据都是本赛季
+今天是2025年11月18日
+QQ交流群1027850475
+免费开源倒卖死全家
+by 风华绝代
+
+
+数组
+
+long int Game666 = get_module_base(pid,"libil2cpp.so")+0xD9BA000;
+数组头=getZZ(getZZ(getZZ(getZZ(Game666+0x4BCB0)+0xB0)+0x50)+0xA0)+0x30;
+
+0~9遍历
+   // 1. 获取玩家对象指针
+            long int playerObj = getZZ(数组头 + (ii * 0x20));
+           // 2. 读取玩家名称
+            char nameBuffer[256] = {0};
+            long int namePtr = getZZ(getZZ(playerObj + 0x268) + 0x28) + 0x14;
+            getUTF8(nameBuffer, namePtr);
+    // 3. 读取玩家属性
+            int health = getDword(playerObj + 0x36c);  // 血量
+            int level  = getDword(playerObj + 0x370);  // 等级
+            int gold   = getDword(playerObj + 0x37c);  // 金币
+
+
+    
+            // 5. 如果这是选中的玩家，读取商店数据
+            if (selectedPlayerIndex == ii) {
+                long int shopPtr = getZZ(getZZ(playerObj + 0x40) + 0x1c0) + 0x20;
+                if (shopPtr) {
+                    std::lock_guard<std::mutex> lock(shop_mutex);
+                    shopCards[0] = getDword(shopPtr + 0x0);
+                    shopCards[1] = getDword(shopPtr + 0x4);
+                    shopCards[2] = getDword(shopPtr + 0x8);
+                    shopCards[3] = getDword(shopPtr + 0xC);
+                    shopCards[4] = getDword(shopPtr + 0x10);
+                }
+            }
